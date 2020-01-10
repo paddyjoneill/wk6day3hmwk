@@ -7,6 +7,11 @@ describe('AnagramFinder', function () {
     assert.deepStrictEqual(anagramFinder.findAnagrams(['cat', 'dog']), ['cat']);
   });
 
+  it('should be able to detect multiple anagrams', function () {
+    const anagramFinder = new AnagramFinder('this');
+    assert.deepStrictEqual(anagramFinder.findAnagrams(['shit', 'hits']), ['shit', 'hits']);
+  });
+
   it('should be able to detect a non-anagram', function () {
     const anagramFinder = new AnagramFinder('potato');
     assert.deepStrictEqual(anagramFinder.findAnagrams(['tomato']), []);
